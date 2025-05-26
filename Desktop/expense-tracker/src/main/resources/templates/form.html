@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Добавить расход</title>
+</head>
+<body>
+<h1>Добавить новый расход</h1>
+<form action="#" th:action="@{/add}" th:object="${expense}" method="post">
+    <label>Название:</label>
+    <input type="text" th:field="*{title}" required /><br/>
+
+    <label>Сумма:</label>
+    <input type="number" step="0.01" th:field="*{amount}" required /><br/>
+
+    <label>Категория:</label>
+    <input type="text" th:field="*{category}" required /><br/>
+
+    <label>Дата:</label>
+    <input type="date" th:field="*{date}" /><br/>
+
+    <button type="submit">Сохранить</button>
+</form>
+<br/>
+<a href="/">Назад к списку</a>
+</body>
+</html>
